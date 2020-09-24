@@ -1,55 +1,12 @@
 // Write code under this line
-class Storage {
-  constructor(items) {
-    this.items = items;
-  }
-  getItems() {
-    return this.items;
-  }
+const getUsersWithGender = (users, gender) =>
+  users.filter(user => user.gender === gender).map(({ name }) => name);
 
-  addItem(newItem) {
-    this.items.push(newItem);
-    return this.items;
-  }
+console.log(getUsersWithGender(users, 'male'));
 
-  removeItem(itemToRemove) {
-    for (let i = 0; i < this.items.length; i += 1)
-      if (itemToRemove === this.items[i]) {
-        this.items.splice(i, 1);
-      }
-  }
-}
-
-console.log(typeof Storage);
-// 'function'
-
-const goods = ['Нанитоиды', 'Пролонгер', 'Железные жупи', 'Антигравитатор'];
-
-const storage = new Storage(goods);
-
-console.log(storage.getItems());
 /* [
-  'Нанитоиды',
-  'Пролонгер',
-  'Железные жупи',
-  'Антигравитатор'
-] */
-
-storage.addItem('Дроид');
-console.log(storage.getItems());
-/* [
-  'Нанитоиды',
-  'Пролонгер',
-  'Железные жупи',
-  'Антигравитатор',
-  'Дроид'
-] */
-
-storage.removeItem('Пролонгер');
-console.log(storage.getItems());
-/* [
-  'Нанитоиды',
-  'Железные жупи',
-  'Антигравитатор',
-  'Дроид'
+  "Moore Hensley",
+  "Ross Vazquez",
+  "Carey Barr",
+  "Blackburn Dotson"
 ] */
